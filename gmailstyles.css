@@ -1,0 +1,49 @@
+.item1 {
+    grid-area: leftmenu;
+    background-color: #C0C1F6;
+    padding-left: 20px;
+}
+.item2 {
+    grid-area: middlemenu;
+    background-color: #A6E4C9;
+}
+.item3 {
+    grid-area: rightmenu;
+    background-color: #FFB5CF;
+}
+
+.item4 {
+    grid-area: topmenu;
+    background-color: #ffdcb5;
+}
+
+.grid-container {
+    display: grid;
+    grid-template: 
+        'topmenu topmenu topmenu' 50px
+        'leftmenu middlemenu rightmenu' 1000px/
+        1fr 2fr 10fr;
+    grid-gap: 0px;
+    color: black;
+}
+
+.grid-container > div{
+    text-align: left;
+    padding: 20px 0;
+    font-size: 3-px;
+    text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+    .grid-container {
+      grid-template:
+        'topmenu' 50px
+        "rightmenu" 1000px /
+        1fr;
+    }
+  
+    .item1,
+    .item2{
+      display: none;
+    }
+  }

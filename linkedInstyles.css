@@ -1,0 +1,42 @@
+.item1 {
+    grid-area: leftmenu;
+    background-color: #C0C1F6;
+    padding-left: 20px;
+}
+.item2 {
+    grid-area: middlemenu;
+    background-color: #A6E4C9;
+}
+.item3 {
+    grid-area: rightmenu;
+    background-color: #FFB5CF;
+}
+
+.grid-container {
+    display: grid;
+    grid-template: 
+        'leftmenu middlemenu rightmenu' 1000px/
+        1fr 2fr 1fr;
+    grid-gap: 15px;
+    color: black;
+}
+
+.grid-container > div{
+    text-align: left;
+    padding: 20px 0;
+    font-size: 3-px;
+    text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+    .grid-container {
+      grid-template:
+        "middlemenu" 1000px /
+        1fr;
+    }
+  
+    .item1,
+    .item3{
+      display: none;
+    }
+  }
